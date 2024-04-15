@@ -53,7 +53,7 @@
         </section>
 
         <!-- Navbar -->
-        <nav
+        <!-- <nav
             class="navbar navbar-expand-md navbar-light bg-transparent sticky-top my-navbar">
             <div class="container">
                 <a class="navbar-brand" href="#">Fiah Wedding</a>
@@ -99,6 +99,44 @@
                     </div>
                 </div>
             </div>
+        </nav> -->
+
+        <nav class="nav-bar navbar-light bg-transparent sticky-top">
+            <!-- ===== logo ===== -->
+
+            <div class="logo">
+                Fiah Wedding
+            </div>
+
+            <!-- ===== Nav-menu ===== -->
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home" src="">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#info" src="">Info</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#story" src="">Story</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#gallery" src="">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#rsvp" src="">RSVP</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#gifts" src="">Gifts</a>
+                </li>
+            </ul>
+
+            <!-- ===== Hamburger menu -->
+            <div class="hamburger">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </div>
+
         </nav>
 
         <!-- Home -->
@@ -266,7 +304,7 @@
                                         <span>2019</span>
                                     </div>
                                     <div class="timeline-body">
-                                        <p>Awal bertemu teradi pada tahun 2019. Di sebuah Madrasah Aliyah, sebagai
+                                        <p>Awal bertemu terjadi pada tahun 2019. Di sebuah Madrasah Aliyah, sebagai
                                             seorang Guru dan Siswi.</p>
                                     </div>
                                 </div>
@@ -383,28 +421,27 @@
                     </div>
 
                 </div>
-                
+
             </div>
         </section>
-        
 
         <!-- Quote -->
         <section id="quote" class="quote">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-8 col-10 text-center">
-                        <p> "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
+                        <p>
+                            "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
                             pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa
                             tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.
                             Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran
                             Allah) bagi kaum yang berpikir."
-                        </p>  
-                            <h3>(QS Ar-Rum:21).</h3>
+                        </p>
+                        <h3>(QS Ar-Rum:21).</h3>
                     </div>
                 </div>
             </div>
         </section>
-
 
         <!-- RSVP -->
         <section id="rsvp" class="rsvp">
@@ -487,6 +524,42 @@
 
         </section>
 
+        <!-- Gifts -->
+        <section id="gifts" class="gifts">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-10 text-center">
+                        <span>ungkapan terima kasih</span>
+                        <h2>Kirim Hadiah</h2>
+                        <p>Biar makin berkah, kamu bisa kirim kado ke.... ^^</p>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center text-center">
+                    <div class="col-md-6">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <div class="fw-bold">Mandiri</div>
+                                1300017324032 - MUHAMAD RAFI SHOFWAN WALIYUDIN
+                            </li>
+                            <li class="list-group-item">
+                                <div class="fw-bold">
+                                    <i class="bi bi-gift"></i>
+                                    Kirim Hadiah</div>
+                                Nama Penerima : Diah Rahmawati
+                                <br>
+                                No HP : 0896-6381-8600
+                                <br>
+                                Alamat: Kp. Lengka RT.002/RW.027
+                                <br>
+                                Desa Ciwidey Kec. Ciwidey Kab. Bandung - Jawa Barat
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Footer -->
         <footer>
@@ -537,7 +610,7 @@
 
         <div id="audio-container">
             <audio id="bgm" autoplay="autoplay" loop="loop">
-                <source src="audio/Akad.mp3" type="audio/mp3">
+                <source src="audio/hari-bahagia.mp3" type="audio/mp3">
             </audio>
         </div>
 
@@ -557,17 +630,43 @@
         <script src="countdown/countdown.js"></script>
 
         <script>
-            const hamburger = document.querySelector('.navbar-toggler');
+            const hamburger = document.querySelector('.hamburger');
             const stickyTop = document.querySelector('.sticky-top');
 
+            let status = true;
             hamburger.addEventListener('click', function () {
-                stickyTop.style.overflow = 'visible';
+                
+                if (status) {
+                    stickyTop.style.overflow = 'visible';
+                    status = false;
+                    console.log(status);
+                } else if (!status) {
+                    stickyTop.style.overflow = 'hidden';
+                    status = true;
+                    console.log(status);
+                }               
             });
 
-            const offcanvas = document.querySelector('.offcanvas');
+            const navmenu = document.querySelector('.nav-menu');
 
-            offcanvas.addEventListener('hidden.bs.offcanvas', function () {
+            navmenu.addEventListener('click', function () {
                 stickyTop.style.overflow = 'hidden';
+                status = true;
+            })
+        </script>
+
+        <!-- ==== Jquery CDN ===== -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+        <script>
+            $('.hamburger').click(() => {
+                $('.nav-menu').toggleClass('active');
+                $('.hamburger').toggleClass('active');
+            })
+
+            $('.nav-menu').click(() => {
+                $('.nav-menu').removeClass('active');
+                $('.hamburger').removeClass('active');
             })
         </script>
 
