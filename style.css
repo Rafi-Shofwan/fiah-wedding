@@ -205,7 +205,8 @@ body {
 
 .story p,
 .gallery p,
-.rsvp p {
+.rsvp p,
+footer p {
     font-size: 1rem;
     font-weight: 300;
 }
@@ -312,6 +313,11 @@ body {
     background-color: #efb9d0;
 }
 
+.quote h3 {
+    color: var(--dk-pink);
+    font-weight: bold;
+}
+
 .rsvp h2 {
     font-size: 4.5rem;
 }
@@ -333,13 +339,15 @@ body {
     border: 1px solid aliceblue;
 }
 
-footer {
+footer, 
+.quote {
     padding: 3rem;
     background: var(--pink);
     color: aliceblue;
 }
 
-footer a {
+footer a,
+footer h3 {
     color: var(--bg);
     font-weight: bold;
     text-decoration: none;
